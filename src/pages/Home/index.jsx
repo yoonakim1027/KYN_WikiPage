@@ -6,7 +6,7 @@ import Modal from '../../components/Modal'
 import WikiList from '../../components/Home/WikiList'
 import AddWikiButton from '../../components/Home/AddWikiButton'
 import { toast } from 'react-toastify'
-import Pagination from '../../components/\bPagination'
+import Pagination from '../../components/Pagination'
 
 function HomePage() {
   const { wikiTitles, setWikiTitles } = useContext(WikiContext)
