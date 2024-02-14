@@ -6,12 +6,22 @@ import Modal from '../../components/Modal'
 import WikiList from '../../components/Home/WikiList'
 import AddWikiButton from '../../components/Home/AddWikiButton'
 import { toast } from 'react-toastify'
+import Pagination from '../../components/\bPagination'
 
 function HomePage() {
   const { wikiTitles, setWikiTitles } = useContext(WikiContext)
   const [newTitle, setNewTitle] = useState('')
   const [newDescription, setNewDescription] = useState('')
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage, setItemsPerPage] = useState(5)
+
+  const indexOfLastItem = currentPage * itemsPerPage
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+  const currentItems = wikiTitles.slice(indexOfFirstItem, indexOfLastItem)
+
+  // 페이지 변경 함수
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
   const handleAddWiki = () => {
     setIsModalOpen(true)
@@ -41,8 +51,12 @@ function HomePage() {
       <div className="flex justify-end">
         <AddWikiButton onClick={handleAddWiki} />
       </div>
-
-      <WikiList wikiTitles={wikiTitles} />
+      <WikiList wikiTitles={currentItems} />
+      <Pagination
+        itemsPerPage={itemsPerPage}
+        totalItems={wikiTitles.length}
+        paginate={paginate}
+      />
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

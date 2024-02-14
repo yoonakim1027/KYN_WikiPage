@@ -25,7 +25,37 @@ const courses = [
   },
   {
     id: 5,
-    title: '클라우드 기반 인프라 구성',
+    title: '클라우드 기반 인프라 구성2',
+    description: '자바 객체지향',
+    detail: '프론트엔드 및 디자인 패턴',
+  },
+  {
+    id: 6,
+    title: '클라우드 보안2',
+    description: '마이크로서비스 인텔 - 컨테이너에서 / API 게이트웨이 구현',
+    detail: 'CNA 마이크로서비스 설계 / 구현',
+  },
+  {
+    id: 7,
+    title: '클라우드 모니터링2',
+    description: 'CNA 마이크로서비스 설계 / 구현',
+    detail: 'CNA 어플리케이션 Fundamentals',
+  },
+  {
+    id: 8,
+    title: '클라우드 인프라 구성 자동화2',
+    description: '자바 프론트엔드와 웹 개발',
+    detail: '자바 스프링 프레임워크',
+  },
+  {
+    id: 9,
+    title: '쿠버네티스 환경 구축 및 운영2',
+    description: '자바 스프링 프레임워크',
+    detail: '자바 객체지향 프로그래밍과 디자인 패턴',
+  },
+  {
+    id: 10,
+    title: '클라우드 기반 인프라 구성2',
     description: '자바 객체지향',
     detail: '프론트엔드 및 디자인 패턴',
   },

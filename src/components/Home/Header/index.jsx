@@ -7,7 +7,7 @@ const Header = () => {
       <div className="flex items-center justify-end gap-2">
         <a href="/">
           <button className="h-10 px-4 font-medium bg-white rounded-lg hover:bg-slate-50 hover:duration-100">
-            코딩허브 소개
+            Home
           </button>
         </a>
         <a href="/content">
