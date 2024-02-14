@@ -3,7 +3,7 @@ import Button from '../../Button'
 
 const WikiDetail = ({ wikiDetail, onEdit }) => {
   return (
-    <div className="section-area flex justify-center mx-5 mt-10">
+    <div className="section-area flex justify-center mx-5 mt-20">
       <div className="section w-full max-w-4xl min-w-lg">
         <div className="section-header flex flex-col items-start justify-center gap-4">
           <p className="text-sm sm:text-md md:text-lg lg:text-xl font-medium text-blue-500">

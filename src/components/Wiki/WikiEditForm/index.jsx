@@ -9,7 +9,7 @@ const WikiEditForm = ({
   onSave,
 }) => {
   return (
-    <div className="flex justify-center w-full px-5 mt-10">
+    <div className="flex justify-center w-full px-5 mt-20">
       <div className="w-full max-w-4xl">
         <form onSubmit={onSave} className="flex flex-col items-center gap-4">
           <input

@@ -45,7 +45,7 @@ function WikiPage() {
   return (
     <div>
       {editMode ? (
-        <div className="">
+        <div>
           <WikiEditForm
             title={title}
             setTitle={setTitle}
