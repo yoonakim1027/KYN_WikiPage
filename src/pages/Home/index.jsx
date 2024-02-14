@@ -47,8 +47,10 @@ function HomePage() {
   }, [])
 
   return (
-    <div>
-      <div className="flex justify-end">
+    <div className="mt-20 mx-4 sm:mx-6 md:mx-8 lg:mx-10 xl:mx-16">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
+        <h2 className=" text-xl font-bold text-blue-600">강의 리스트</h2>
+
         <Button onClick={handleAddWiki} title={'추가'} />
       </div>
       <WikiList wikiTitles={currentItems} />

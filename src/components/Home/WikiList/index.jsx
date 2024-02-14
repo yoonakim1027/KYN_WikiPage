@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 const WikiList = ({ wikiTitles }) => {
   return (
     <div className="max-w-screen-xl mx-auto py-4" data-aos="fade-up">
-      <h2 className="text-xl font-bold text-blue-600 mb-4 mx-2">강의 리스트</h2>
       <ul className="divide-y divide-gray-200">
         {wikiTitles.map((course, index) => (
           <li
