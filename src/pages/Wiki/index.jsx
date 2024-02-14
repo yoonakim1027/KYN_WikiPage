@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import courses from '../datas'
 import { WikiContext } from '../../context/WikiContext'
-
+import WikiDetail from '../../components/Wiki/WikiDetail'
+import WikiEditForm from '../../components/Wiki/WikiEditForm'
 function WikiPage() {
   const { title: urlTitle } = useParams()
   const { wikiTitles, setWikiTitles, updateWikiTitle } = useContext(WikiContext)
@@ -44,31 +45,19 @@ function WikiPage() {
   return (
     <div>
       {editMode ? (
-        <form onSubmit={handleSave}>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+        <div className="">
+          <WikiEditForm
+            title={title}
+            setTitle={setTitle}
+            description={description}
+            setDescription={setDescription}
+            detail={detail}
+            setDetail={setDetail}
+            onSave={handleSave}
           />
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <textarea
-            value={detail}
-            onChange={(e) => setDetail(e.target.value)}
-          />
-          <button type="submit">저장</button>
-        </form>
+        </div>
       ) : (
-        wikiDetail && (
-          <div>
-            <h1>{wikiDetail.title}</h1>
-            <p>{wikiDetail.description}</p>
-            <div>{wikiDetail.detail}</div>
-            <button onClick={handleEdit}>수정</button>
-          </div>
-        )
+        <WikiDetail wikiDetail={wikiDetail} onEdit={handleEdit} />
       )}
     </div>
   )
