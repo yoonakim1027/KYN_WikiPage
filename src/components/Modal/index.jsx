@@ -1,4 +1,7 @@
 import React from 'react'
+import { ModalFooter } from './ModalFooter'
+import { ModalHeader } from './ModalHeader'
+import { ModalBody } from './ModalBody'
 
 function Modal({
   isOpen,
@@ -12,36 +15,19 @@ function Modal({
   if (!isOpen) return null
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor: 'white',
-        padding: '20px',
-        zIndex: 1000,
-      }}
-    >
-      <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="제목"
-          required
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
+      <div className="bg-white p-5 rounded z-20">
+        <ModalHeader onClose={onClose} />
+        <ModalBody title={title} description={description} />
+        <ModalFooter
+          onSubmit={onSubmit}
+          title={title}
+          setTitle={setTitle}
+          description={description}
+          setDescription={setDescription}
+          onClose={onClose}
         />
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="설명"
-          required
-        />
-        <button type="submit">저장</button>
-        <button type="button" onClick={onClose}>
-          취소
-        </button>
-      </form>
+      </div>
     </div>
   )
 }

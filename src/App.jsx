@@ -5,6 +5,7 @@ import HomePage from './pages/Home'
 import WikiPage from './pages/Wiki'
 import Header from './components/Home/Header'
 import './App.css'
+
 function App() {
   return (
     <WikiProvider>
