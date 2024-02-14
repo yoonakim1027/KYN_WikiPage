@@ -7,6 +7,7 @@ import WikiList from '../../components/Home/WikiList'
 import AddWikiButton from '../../components/Home/AddWikiButton'
 import { toast } from 'react-toastify'
 import Pagination from '../../components/Pagination'
+import Button from '../../components/Button'
 
 function HomePage() {
   const { wikiTitles, setWikiTitles } = useContext(WikiContext)
@@ -49,7 +50,7 @@ function HomePage() {
   return (
     <div>
       <div className="flex justify-end">
-        <AddWikiButton onClick={handleAddWiki} />
+        <Button onClick={handleAddWiki} title={'추가'} />
       </div>
       <WikiList wikiTitles={currentItems} />
       <Pagination

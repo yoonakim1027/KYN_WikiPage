@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../Button'
 
 const WikiDetail = ({ wikiDetail, onEdit }) => {
   return (
@@ -15,9 +16,9 @@ const WikiDetail = ({ wikiDetail, onEdit }) => {
             {wikiDetail.detail}
           </h3>
         </div>
-        <button onClick={onEdit} className="mt-4 text-lg teritary-btn">
-          수정
-        </button>
+        <div className="mt-10 flex justify-end">
+          <Button onClick={onEdit} title={'수정'} />
+        </div>
       </div>
     </div>
   )
